@@ -9,7 +9,7 @@ public class Ball{
     Color color = Color.PINK;
 
 
-    public void  Ball(int x, int y, int vx, int vy, int size, Color color){
+    public Ball(int x, int y, int vx, int vy, int size, Color color){
         this.x = x;
         this.y = y;
         this.vx = vx;
