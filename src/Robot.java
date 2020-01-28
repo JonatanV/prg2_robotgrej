@@ -5,13 +5,17 @@ public class Robot {
     int yPos;
     float hunger;
     float thirst;
+    int size;
     Color color = Color.BLUE;
 
-    public void Robot(int xPos, int yPos) {
-        xPos = this.xPos;
-        yPos = this.yPos;
+
+
+    public Robot(int xPos, int yPos, int size) {
+        this.xPos = xPos;
+        this.yPos = yPos;
         hunger = 10;
         thirst = 10;
+        this.size = size;
 
     }
 }

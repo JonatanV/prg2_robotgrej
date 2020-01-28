@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.image.BufferStrategy;
 
 public class World extends Canvas implements Runnable{
+    private Robot r;
     private int width;
     private int height;
     private String title = "World";
@@ -13,6 +14,7 @@ public class World extends Canvas implements Runnable{
     private Thread thread;
 
     public World(int width, int height) {
+        r = new Robot(10,10, 10);
         Dimension size = new Dimension(width, height);
         setPreferredSize(size);
         frame = new JFrame();
@@ -61,24 +63,26 @@ public class World extends Canvas implements Runnable{
     }
 
     private void draw() {
+
         BufferStrategy bs = getBufferStrategy();
         if (bs == null) {
             createBufferStrategy(3);
             return;
         }
-
         Graphics g = bs.getDrawGraphics();
-        g.setColor(Color.RED);
-        g.fillOval(200,200,50,50);
+        g.setColor(r.color);
+        g.fillRect(r.xPos,r.yPos,r.size,r.size);
         g.dispose();
         bs.show();
+
     }
 
     private void update() {
 
     }
     public static void main(String[] args) {
-        Robot r = new Robot();
+
+
         World game = new World(800,600);
         game.frame.add(game);
         game.frame.pack();
