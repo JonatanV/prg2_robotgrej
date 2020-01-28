@@ -5,7 +5,7 @@ import java.awt.image.BufferStrategy;
 public class World extends Canvas implements Runnable{
     private int width;
     private int height;
-    private String title = "PoolSimulator";
+    private String title = "World";
     private JFrame frame;
     private int fps = 30;
     private int ups = 30;
@@ -78,6 +78,7 @@ public class World extends Canvas implements Runnable{
 
     }
     public static void main(String[] args) {
+        Robot r = new Robot();
         World game = new World(800,600);
         game.frame.add(game);
         game.frame.pack();
