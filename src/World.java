@@ -4,6 +4,7 @@ import java.awt.image.BufferStrategy;
 
 public class World extends Canvas implements Runnable{
     private Robot r;
+    private Vatten v;
     private int width;
     private int height;
     private String title = "World";
@@ -14,6 +15,7 @@ public class World extends Canvas implements Runnable{
     private Thread thread;
 
     public World(int width, int height) {
+        v = new Vatten();
         r = new Robot(10,10, 10);
         Dimension size = new Dimension(width, height);
         setPreferredSize(size);
@@ -72,6 +74,8 @@ public class World extends Canvas implements Runnable{
         Graphics g = bs.getDrawGraphics();
         g.setColor(r.color);
         g.fillRect(r.xPos,r.yPos,r.size,r.size);
+        g.setColor(v.c);
+        g.fillRect(v.xPos,v.yPos,v.size,v.size);
         g.dispose();
         bs.show();
 

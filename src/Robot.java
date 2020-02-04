@@ -6,9 +6,7 @@ public class Robot {
     float hunger;
     float thirst;
     int size;
-    Color color = Color.BLUE;
-
-
+    Color color = Color.GRAY;
 
     public Robot(int xPos, int yPos, int size) {
         this.xPos = xPos;
@@ -16,6 +14,12 @@ public class Robot {
         hunger = 10;
         thirst = 10;
         this.size = size;
+
+    }
+    public void Move(){
+
+    }
+    public void Eat(){
 
     }
 }
